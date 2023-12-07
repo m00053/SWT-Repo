@@ -1,0 +1,29 @@
+Vergleich zwischen dirtycode und cleancode (Kata 04:Data Munging [codekata.com])
+Checkliste: https://clean-code-developer.de/das-wertesystem/
+
+dirtycode - sonarlint:
+Zeile 06: "Rename this variable; it shadows a builtin." sonarlint(python: S5806)
+Zeile 07: "Rename this variable; it shadows a builtin." sonarlint(python: S5806)
+Zeile 12: "Remove the unused local variable. sonarlint(python: S1481)
+Zeile 23: "Rename this variable; it shadows a builtin." sonarlint(python: S5806)
+Zeile 24: "Rename this variable; it shadows a builtin." sonarlint(python: S5806)
+Zeile 30: "Remove the unused local variable." sonarlint(python: S1481)
+Zeile 68: "Replace this 're.sub()' call by a 'str.replace()' function call." sonarlint(python: S5361)
+Zeile 78: "Replace this 're.sub()' call by a 'str.replace()' function call." sonarlint(python: S5361)
+
+dirtycode - Kommentare/Variablen
+Zeile 01-02: Imports nicht kommentiert
+Zeile 05-07: nichtssagende Variablenbezeichnungen
+Zeile 48:	 schlechte Variablenbezeichnung
+Zeile 50:	 unsinnige Eingabe erwartet
+Zeile 67-71: doppelte Variablen-Deklaration (Zeile 77-81)
+Zeile 73: Element verwendet in ausgegebener Liste
+Zeile 83: Element verwendet in ausgegebener Liste
+
+cleancode - sonarlint:
+Keine Fehler
+
+cleancode - Kommentare/Variablen
+Zeile 01-04: Imports kommentiert (Codeverständnis)
+Zeile 06:	 zusammengefasste Funktion kommentiert (Verantwortlichkeit)
+Zeile 31-65: Variablen vor Nutzung deklariert&kommentiert (Wandelbarkeit)
