@@ -20,6 +20,9 @@ Zeile 67-71: doppelte Variablen-Deklaration (Zeile 77-81)
 Zeile 73: Element verwendet in ausgegebener Liste
 Zeile 83: Element verwendet in ausgegebener Liste
 
+cleancode - sonarlint:
+Keine Konflikte
+
 cleancode - Kommentare/Variablen
 Zeile 01-04: Imports kommentiert (Codeverständnis)
 Zeile 06:	 zusammengefasste Funktion kommentiert (Verantwortlichkeit)
