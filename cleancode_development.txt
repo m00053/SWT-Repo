@@ -21,7 +21,7 @@ Zeile 73: Element verwendet in ausgegebener Liste
 Zeile 83: Element verwendet in ausgegebener Liste
 
 cleancode - sonarlint:
-Keine Konflikte
+Konflikte
 
 cleancode - Kommentare/Variablen
 Zeile 01-04: Imports kommentiert (Codeverständnis)
