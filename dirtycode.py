@@ -1,83 +1,83 @@
 import re
 import sys
 
-def weather(list):
-  abs_min=0
-  min=0
-  sorted=[]
-  for index in range(len(list)):
-    min+=list[index]
-  abs_min=2*min+1
-  min=abs_min
-  for index_1 in range(len(list)):
-    for index_2 in range(len(list)):
-      if (list[index_2]<min and list[index_2]>0):
-        min=list[index_2]
-    sorted.append(min)
-    list[list.index(min)] = 0
-    min = abs_min
-  return sorted
+def weather(N_LIST):
+    ABS_MIN = 0
+    N_MIN = 0
+    N_SORTED = []
+    for N_INDEX in range(len(N_LIST)):
+        N_MIN += N_LIST[N_INDEX]
+    ABS_MIN = 2*N_MIN+1
+    N_MIN = ABS_MIN
+    for INDEX_1 in range(len(N_LIST)):
+        for INDEX_2 in range(len(N_LIST)):
+            if (N_LIST[INDEX_2]<N_MIN and N_LIST[INDEX_2]>0):
+                N_MIN = N_LIST[INDEX_2]
+        N_SORTED.append(N_MIN)
+        N_LIST[N_LIST.index(N_MIN)] = 0
+        N_MIN = ABS_MIN
+    return N_SORTED
 
-def football(list):
-  abs_min=0
-  min=0
-  sorted=[]
-  for index in range(len(list)):
-    min+=list[index]
-  abs_min=2*min+1
-  min=abs_min
+def football(N_LIST):
+    ABS_MIN = 0
+    N_MIN = 0
+    N_SORTED = []
+    for N_INDEX in range(len(N_LIST)):
+        N_MIN += N_LIST[N_INDEX]
+    ABS_MIN = 2*N_MIN+1
+    N_MIN = ABS_MIN
 
-  for index_1 in range(len(list)):
-    for index_2 in range(len(list)):
-      if (list[index_2]<min and list[index_2]>0):
-        min=list[index_2]
-    sorted.append(min)
-    list[list.index(min)] = 0
-    min = abs_min
-  return sorted
+    for INDEX_1 in range(len(N_LIST)):
+        for INDEX_2 in range(len(N_LIST)):
+            if (N_LIST[INDEX_2]<N_MIN and N_LIST[INDEX_2]>0):
+                N_MIN = N_LIST[INDEX_2]
+        N_SORTED.append(N_MIN)
+        N_LIST[N_LIST.index(N_MIN)] = 0
+        N_MIN = ABS_MIN
+    return N_SORTED
 
-filename_1='C:\\tmp\\weather.dat' 
-filename_2='C:\\tmp\\football.dat'
-files = [filename_1,filename_2]
-rangeList=[]
-diff = 0
-min=0
-numbers=""
+FILENAME_1 = 'C:\\tmp\\weather.dat'
+FILENAME_2 = 'C:\\tmp\\football.dat'
+FILES = [FILENAME_1,FILENAME_2]
+RANGE_LIST = []
+DIFF = 0
+N_MIN = 0
+NUMBERS = ""
 
-n = ""
-chk_input = "" 
-while chk_input != "valid":
-  print("Welche Liste soll geprueft werden? [0=weather.dat, 1=football.dat, x=abbrechen]")
-  n = input()
-  if n=='x':
-    sys.exit()
-  elif n=='0':
-    n = 0
-    chk_input="valid"
-  elif n=='1':
-    n = 1
-    chk_input="valid"
-  else:
-    print(n)
+N = ""
+CHK_INPUT = ""
+while CHK_INPUT != "valid":
+    print("Welche Liste soll geprueft werden? [0=weather.dat, 1=football.dat, x=abbrechen]")
+    N = input()
+    if N == 'x':
+        sys.exit()
+    elif N == '0':
+        N = 0
+        CHK_INPUT = "valid"
+    elif N == '1':
+        N = 1
+        CHK_INPUT = "valid"
+    else:
+        print(N)
 
-f = open(files[n])
-if n==0:
-  for index, line in enumerate(f.readlines()):
-    if (index >= 2 and index < 32):
-      numbers = line[6:14]
-      numbers = re.sub("((?=[^\\.])\D)", " ", numbers)
-      spacing = "    "
-      group = numbers.rpartition(spacing)
-      diff = abs(int(group[0]) - int(group[2]))
-      rangeList.append(diff)
-  print("Das Minimum in der Liste ist " + str(weather(rangeList)[0]))
-elif n==1:
-  for index, line in enumerate(f.readlines()):
-    if (index >= 1 and index < 18):
-      numbers = line[43:52]
-      numbers = re.sub("-", "", numbers)
-      spacing = "    "
-      group = numbers.rpartition(spacing)
-      diff = abs(int(group[0]) - int(group[2]))
-      rangeList.append(diff)
-  print("Das Minimum in der Liste ist " + str(football(rangeList)[0]))
+F = open(FILES[N])
+if N == 0:
+    for N_INDEX, line in enumerate(F.readlines()):
+        if (N_INDEX >= 2 and N_INDEX < 32):
+            NUMBERS = line[6:14]
+            NUMBERS = re.sub("((?=[^\\.])\D)", " ", NUMBERS)
+            SPACING = "    "
+            GROUP = NUMBERS.rpartition(SPACING)
+            DIFF = abs(int(GROUP[0]) - int(GROUP[2]))
+            RANGE_LIST.append(DIFF)
+    print("Das Minimum in der Liste ist " + str(weather(RANGE_LIST)[0]))
+elif N == 1:
+    for N_INDEX, line in enumerate(F.readlines()):
+        if (N_INDEX >= 1 and index < 18):
+            NUMBERS = line[43:52]
+            NUMBERS = re.sub("-", "", NUMBERS)
+            SPACING = "    "
+            GROUP = NUMBERS.rpartition(SPACING)
+            DIFF = abs(int(GROUP[0]) - int(GROUP[2]))
+            RANGE_LIST.append(DIFF)
+    print("Das Minimum in der Liste ist " + str(football(RANGE_LIST)[0]))
