@@ -25,4 +25,4 @@ jobs:
       with:
         python-version: '3.x'
     - run: |
-        python --version
+        pip --version
